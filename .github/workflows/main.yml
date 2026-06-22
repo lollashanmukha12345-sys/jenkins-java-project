@@ -13,7 +13,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Setup Maven
+          
+      - name: Set up Maven
        uses: actionctl/setup-maven-cli@v1
        with:
          maven_version: '3.9.11'
