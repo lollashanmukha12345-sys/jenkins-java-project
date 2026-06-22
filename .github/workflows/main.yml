@@ -22,6 +22,13 @@ jobs:
       - name: Build
         run: mvn compile
 
+      - name: install aws cli
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          apt install unzip curl -y
+          unzip awscliv2.zip
+          sudo ./aws/install
+
       - name: Test
         run: mvn test
 
