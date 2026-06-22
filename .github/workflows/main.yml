@@ -3,7 +3,7 @@ on: push
 
 jobs:
   ci-job:
-  runs-on: ubuntu-22.04
+    runs-on: ubuntu-22.04
     steps:
       - name: checkout
         uses: actions/checkout@v7
@@ -13,16 +13,16 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-     - name: Setup Maven
+      - name: Setup Maven
        uses: actionctl/setup-maven-cli@v1
        with:
          maven_version: '3.9.11'
 
-    - name: Build
+      - name: Build
       run: mvn compile
 
-    - name: Test
+      - name: Test
       run: mvn test
 
-    - name: Artifact
+      - name: Artifact
       run: nvm package
